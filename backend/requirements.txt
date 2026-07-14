@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+httpx
+gitpython
+sqlalchemy
+databases
+aiosqlite
+python-multipart
+pydantic
+websockets

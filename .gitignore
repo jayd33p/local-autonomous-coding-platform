@@ -1,0 +1,21 @@
+# Byte-compiled / virtualenv
+__pycache__/
+*.pyc
+.venv/
+
+# Node
+node_modules/
+dist/
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+
+# OS
+.DS_Store
+
+# Workspace
+workspace/**/.DS_Store
