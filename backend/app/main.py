@@ -1,10 +1,25 @@
 """Backend application entrypoint for the Local Autonomous Coding Platform."""
 from fastapi import FastAPI, WebSocket
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from . import orchestrator
 
 app = FastAPI(title="Local Autonomous Coding Platform - Backend")
+
+# Development CORS settings - restrict origins in production
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # use ["*"] for quick testing only
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/health")
 async def health():
